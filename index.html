@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGO Tesla</title>
+</head>
+<!--Scss-->
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .tesla {
+        display: grid;
+        grid: 300px/repeat(2, 150px);
+        /* X/repeat(2,X/2) */
+        background: radial-gradient(farthest-side at bottom, #0000 93.6%, #e91b22 94% 99.6%, #0000) 50%/230% 100% no-repeat;
+        clip-path: polygon(-6% 0, 106% 0, 50% 100%);
+    }
+    
+    .tesla::before,
+    .tesla::after {
+        content: "";
+        background: radial-gradient(231% 211% at 200% -100%, #e91b22 99%, #0000) 12% 11%/28% 13% no-repeat, radial-gradient(100% 102% at 100% 100%, #0000 96%, #e91b22) 45% 14%/19% 9% no-repeat, conic-gradient(from -90deg at 69.5% 12.5%, #e91b22 270deg, #0000 0) 100% 0/94% 100% no-repeat;
+        margin-top: 20%;
+        border-top-left-radius: 100% 17%;
+        clip-path: polygon(-5% 0, 80% 0, 100% 14%, 100% 100%, 72% 13%, 28% 23%);
+    }
+    
+    .tesla::after {
+        transform: scaleX(-1);
+    }
+    /* animacao do logo da tesla */
+    
+    .tesla {
+        animation: tesla-logo 1s linear infinite;
+    }
+    
+    @keyframes tesla-logo {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    
+    body {
+        margin: 0;
+        height: 100vh;
+        display: grid;
+        place-content: center;
+        background-color: rgb(56, 56, 53);
+        background-image: url("https://www.tesla.com/sites/default/files/drupal8/2018-model-s-p100d-concept-image-1.jpg");
+    }
+    /*animcao da class atom*/
+    
+    .atom {
+        background-color: rgb(24, 22, 22);
+        border-radius: 8%;
+        overflow: hidden;
+        border-style: solid;
+        border-width: 15px;
+        border-color: #574d4d;
+    }
+    
+    .atom {
+        animation: atom-animation 1s ease-in-out infinite;
+    }
+    
+    @keyframes atom-animation {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    /*aqui esta a deescricao do logo da tesla*/
+    
+    .Tesla-motors {
+        font-size: 50px;
+        color: #e91b22;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .Tesla-motors span {
+        color: #e59393;
+        font-size: 50px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+        margin: 5px;
+    }
+</style>
+
+<body>
+    <!--criar um atomo com o logo da tesla-->
+    <div class="atom">
+        <div class="tesla"></div>
+    </div>
+    <br>
+    <div class="Tesla-motors">
+        <span>Tesla</span>
+        <span>Motors</span>
+    </div>
+</body>
+
+</html>
